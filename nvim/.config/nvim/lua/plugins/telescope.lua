@@ -12,7 +12,7 @@ return {
       local builtin = require("telescope.builtin")
       local lga_actions = require("telescope-live-grep-args.actions")
       vim.keymap.set("n", "<leader>p", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>fw", telescope.extensions.live_grep_args.live_grep_args, {})
+      vim.keymap.set("n", "<leader>fg", telescope.extensions.live_grep_args.live_grep_args, {})
 
       telescope.setup({
         extensions = {
