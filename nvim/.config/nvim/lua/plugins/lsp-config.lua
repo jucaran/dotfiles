@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "biome", "ts_ls" },
+        ensure_installed = { "lua_ls", "pyright", "biome", "ts_ls", "tailwindcss", "cssls" },
       })
     end,
   },
@@ -19,12 +19,8 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.pyright.setup({
-        capabilities = capabilities,
-      })
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.biome.setup({
         cmd = { "biome", "lsp-proxy" },
         capabilities = capabilities,
@@ -37,6 +33,8 @@ return {
           }
         }
       })
+      lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig.cssls.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
