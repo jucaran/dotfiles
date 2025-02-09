@@ -13,10 +13,10 @@ return {
 			local builtin = require("telescope.builtin")
 			local lga_actions = require("telescope-live-grep-args.actions")
 
-			-- vim.keymap.set("n", "<leader>p", builtin.find_files, {})
+			vim.keymap.set("n", "<leader>p", builtin.find_files, {})
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 			vim.keymap.set("n", "<leader>fg", telescope.extensions.live_grep_args.live_grep_args, {})
-			vim.keymap.set("n", "<leader>p", telescope.extensions.recent_files.pick, {})
+			vim.keymap.set("n", "<leader>r", telescope.extensions.recent_files.pick, {})
 
 			telescope.setup({
 				defaults = {
